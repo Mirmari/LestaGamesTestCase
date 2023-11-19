@@ -1,0 +1,33 @@
+.search-container {
+  margin: 20px;
+  min-width: 510px;
+  .search-inner{
+    .input-search{
+      background: rgba(0,0,0,0.2);
+      border: 1px solid #212c33;
+      box-sizing: border-box;
+      font-family: Arial,"Helvetica CY",Helvetica,sans-serif;
+      font-size: 16px;
+      color: #ccc;
+      padding: 0 10px;
+      height: 36px;
+      transition: border-color .3s, color .3s;
+    }
+    .btn-search{
+      background-color: #ffaa00;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      box-shadow: 0 7px 6px rgba(0,0,0,0.34);
+      box-sizing: border-box;
+      color: #000;
+      font: 18px/36px "WarHelios","Arial Narrow",Arial,sans-serif;
+      display: inline-block;
+      padding: 0 10px;
+      text-align: center;
+      text-shadow: 0 1px #ffe699;
+      text-transform: uppercase;
+      min-width: 247px;
+      margin: 0 20px;
+    }
+  }
+}

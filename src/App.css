@@ -1,0 +1,21 @@
+.app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: url(assets/bg.jpg) no-repeat 50% 0 fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  background-color: #0a161f;
+  height: 100%;
+  font-family: Arial,"Helvetica CY",Helvetica,sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: #ccc;
+  /*min-width: 1200px;*/
+  position: relative;
+
+}

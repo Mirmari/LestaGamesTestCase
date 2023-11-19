@@ -1,0 +1,13 @@
+.tank-view {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+
+  &-pagination {
+    position: absolute;
+    bottom: 32px;
+    margin: 0 auto;
+  }
+}
