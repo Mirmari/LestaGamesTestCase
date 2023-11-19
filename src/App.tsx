@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import TanksView from "./components/Pages/TanksView";
+import TanksView from "./Pages/TanksView";
 
 const App = () => {
     return (

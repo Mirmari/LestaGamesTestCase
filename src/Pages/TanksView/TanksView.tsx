@@ -1,17 +1,17 @@
 import './style.scss'
 import React from 'react';
-import TanksTable from "../../TanksTable";
-import Pagination from "../../common/Pagination";
 import {useTanksView} from "./useTanksView";
-import SearchBlock from "../../SearchBlock";
-import HeaderTitle from "../../HeaderTitle";
-import Loader from "../../common/Loader";
+import Pagination from "../../components/common/Pagination";
+import TanksTable from "../../components/TanksTable";
+import Loader from "../../components/common/Loader";
+import HeaderTitle from "../../components/common/HeaderTitle";
+import SearchBlock from "../../components/common/SearchBlock";
 
 const TanksView = () => {
     const {meta, data, loading, changePage, setRowsPerPages, onSearch, value, onChange} = useTanksView()
 
     return (
-        <div className="tank-view">
+        <div className="tank-view" data-testid="tank-view">
             <HeaderTitle title="Tanks View by tankopedia"/>
             <SearchBlock value={value} onChange={onChange} onSearch={onSearch}/>
             {loading ? <Loader/> : <TanksTable data={data}/>}

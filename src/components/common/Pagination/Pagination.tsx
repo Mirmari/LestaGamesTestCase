@@ -50,7 +50,7 @@ const Pagination: React.FC<PropTypes> = ({
     return (
         <PaginationWrapper>
             {totalPage > 1 ? (
-                <div className="pagination__main">
+                <div className="pagination__main" data-testid="pagination__main">
                     <span onClick={toBack}>
                         <ArrowPaginationIcon />
                     </span>

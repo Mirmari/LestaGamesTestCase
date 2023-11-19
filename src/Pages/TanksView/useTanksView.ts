@@ -1,10 +1,10 @@
 import axios from "axios";
 import {ChangeEvent, useEffect, useState} from "react";
-import ApiData, {MetaType} from "../../../types/ApiData";
-import TankDataType from "../../../types/TankDataType";
-import {resolveDiacritics} from "../../utils";
+import TankDataType from "../../types/TankDataType";
+import {resolveDiacritics} from "../../components/utils";
+import ApiData, {MetaType} from "../../types/ApiData";
+import {API_URL} from "../../constants/api";
 
-const API_URL = "https://api.tanki.su/wot/encyclopedia/vehicles/"
 
 export const getTankByName = async () => {
     return await axios

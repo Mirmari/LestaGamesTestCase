@@ -16,7 +16,7 @@ const TanksTable: React.FC<PropsTypes> = ({data}) => {
     return (
         <div>
             <>
-                <table className="tanks-table">
+                <table className="tanks-table" data-testid="tanks-table">
                     <thead>
                     <tr>
                         <th>Nation</th>
@@ -34,7 +34,7 @@ const TanksTable: React.FC<PropsTypes> = ({data}) => {
                         const type = tank.type;
                         return (
                             <tr
-                                key={tank.id}
+                                key={item}
                                 data-testid="table-row"
                             >
                                 <td>
