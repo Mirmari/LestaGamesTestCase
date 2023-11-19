@@ -1,9 +1,9 @@
 import axios from "axios";
 import {ChangeEvent, useEffect, useState} from "react";
 import TankDataType from "../../types/TankDataType";
-import {resolveDiacritics} from "../../components/utils";
 import ApiData, {MetaType} from "../../types/ApiData";
 import {API_URL} from "../../constants/api";
+import {resolveDiacritics} from "../../utils";
 
 
 export const getTankByName = async () => {

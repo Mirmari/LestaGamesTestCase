@@ -3,13 +3,11 @@ import "@testing-library/jest-dom";
 import TanksTable from "../../../../components/TanksTable";
 import getMokData from "../../MokData";
 
-
-
 afterEach(() => {
     cleanup();
 });
 
-test("Table component test", () => {
+test("TanksTable component test", () => {
 
     const mokData = getMokData();
 

@@ -1,12 +1,12 @@
 import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import SearchBlock from "../../../../components/SearchBlock";
+import SearchBlock from "../../../../components/common/SearchBlock";
 
 afterEach(() => {
     cleanup();
 });
 
-test("SearchBlock test", () => {
+test("SearchBlock component test", () => {
     const mokFn = jest.fn();
     const mokValue = "Lowe";
 

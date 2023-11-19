@@ -1,6 +1,6 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import HeaderTitle from "../../../../components/HeaderTitle";
+import HeaderTitle from "../../../../components/common/HeaderTitle";
 
 afterEach(() => {
     cleanup();
