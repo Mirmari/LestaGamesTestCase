@@ -1,5 +1,5 @@
+import ApiData from "../../../types/ApiData";
 
-import ApiData from "../../types/ApiData";
 
 const getMokData = (): ApiData => {
     return {

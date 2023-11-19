@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TanksTable from "../../../../components/TanksTable";
-import getMokData from "../../MokData";
+import getMokData from "../MokData";
 
 afterEach(() => {
     cleanup();

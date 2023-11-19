@@ -5,7 +5,7 @@ import ApiData, {MetaType} from "../../types/ApiData";
 import {API_URL} from "../../constants/api";
 import {resolveDiacritics} from "../../utils";
 
-
+//the solution is not the best, but I couldn’t find another API
 export const getTankByName = async () => {
     return await axios
         .get(
