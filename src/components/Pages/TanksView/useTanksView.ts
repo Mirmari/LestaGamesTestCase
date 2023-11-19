@@ -2,10 +2,11 @@ import axios from "axios";
 import {ChangeEvent, useEffect, useState} from "react";
 import ApiData, {MetaType} from "../../../types/ApiData";
 import TankDataType from "../../../types/TankDataType";
+import {resolveDiacritics} from "../../utils";
 
 const API_URL = "https://api.tanki.su/wot/encyclopedia/vehicles/"
 
-export const getTankByName = async (name: string) => {
+export const getTankByName = async () => {
     return await axios
         .get(
             `${API_URL}?application_id=2b0adae8aa6efcbaf9abba08c10e8a3d&fields=nation,images.small_icon,name,type,default_profile.hp,description,price_credit,tank_id`
@@ -59,16 +60,10 @@ export const useTanksView = () => {
             getTanks(deafultValues)
         } else {
             setIsLoading(true)
-            getTankByName(name).then((res) => {
+            getTankByName().then((res) => {
                 for (let key in res.data.data) {
-                    const name1NFD = res.data.data[key].name
-                        .normalize("NFD")
-                        .replace(/[\u0300-\u036f]/g, "")
-                        .toLowerCase();
-                    const name2NFD = name
-                        .normalize("NFD")
-                        .replace(/[\u0300-\u036f]/g, "")
-                        .toLowerCase();
+                    const name1NFD = resolveDiacritics(res.data.data[key].name)
+                    const name2NFD = resolveDiacritics(name)
                     if (!name1NFD.includes(name2NFD)) delete res.data.data[key];
                 }
                 setData(res.data.data);

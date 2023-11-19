@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 
 export const usePagination = ({
     count,
@@ -35,59 +35,29 @@ export const usePagination = ({
         return arr;
     }, [totalPage, page]);
 
-    const pageBack = useMemo(() => (page === 0 ? totalPage - 1 : page - 1), [
-        totalPage,
-        page,
-    ]);
+    const pageBack = page === 0 ? totalPage - 1 : page - 1
 
-    const pageForward = useMemo(() => (page === totalPage - 1 ? 0 : page + 1), [
-        totalPage,
-        page,
-    ]);
+    const pageForward = page === totalPage - 1 ? 0 : page + 1
 
-    const dotStart = useMemo(() => totalPage > 9 && page > 4, [
-        totalPage,
-        page,
-    ]);
+    const dotStart =  totalPage > 9 && page > 4
 
-    const dotFinish = useMemo(() => totalPage > 9 && totalPage - 1 - page > 4, [
-        totalPage,
-        page,
-    ]);
+    const dotFinish = totalPage > 9 && totalPage - 1 - page > 4
 
-    const changeCount = useCallback((data: number) => onChangeRows(data), [
-        onChangeRows,
-    ]);
+    const changeCount = (data: number) => onChangeRows(data)
 
-    const toBack = useCallback(() => onChangePage(pageBack), [
-        pageBack,
-        onChangePage,
-    ]);
+    const toBack = () => onChangePage(pageBack)
 
-    const toForward = useCallback(() => onChangePage(pageForward), [
-        pageForward,
-        onChangePage,
-    ]);
+    const toForward = () => onChangePage(pageForward)
 
-    const toFirstPage = useCallback(() => onChangePage(0), [onChangePage]);
+    const toFirstPage = () => onChangePage(0)
 
-    const toLastPage = useCallback(() => onChangePage(totalPage-1), [
-        totalPage,
-        onChangePage,
-    ]);
+    const toLastPage = () => onChangePage(totalPage-1)
 
-    const classFirstPage = useMemo(() => (0 === page ? "active" : null), [
-        page,
-    ]);
+    const classFirstPage = page === 0 ? "active" : null
 
-    const classLastPage = useMemo(
-        () => (totalPage - 1 === page ? "active" : null),
-        [totalPage, page]
-    );
+    const classLastPage = totalPage - 1 === page ? "active" : null
 
-    const counterPage = useMemo(() => {
-        return loading || rowsPerPage < countPage ? rowsPerPage : countPage;
-    }, [loading, rowsPerPage, countPage]);
+    const counterPage = loading || rowsPerPage < countPage ? rowsPerPage : countPage
 
     return {
         counterPage,

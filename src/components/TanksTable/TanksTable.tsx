@@ -55,7 +55,7 @@ const TanksTable: React.FC<PropsTypes> = ({data}) => {
                                 </td>
                                 <td>{tank.name}</td>
                                 <td>{tank.default_profile?.hp}</td>
-                                <td>{tank.price_credit}</td>
+                                <td>{tank.price_credit ?? 'No information'}</td>
                             </tr>
                         );
                     })}
